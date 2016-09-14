@@ -1,7 +1,10 @@
 # Ember-bootstrap
 
-This README outlines the details of collaborating on this Ember application.
-A short introduction of this app could easily go here.
+This is an example app using bootstrap and ember-data with data source from a WordPress site using the JSON API plugin for fetching posts, tags, categories, etc.
+
+The development status is always a work in progress, as I'm learning Emberjs, I will be trying and testing new stuff here.
+
+If you want to give it a try, just do a fork and let's learn the Ember way together.
 
 ## Prerequisites
 
