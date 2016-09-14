@@ -1,0 +1,23 @@
+<div class="row">
+{{#each model as |noticia|}}
+
+{{!-- {{log rota}} --}}
+{{!-- {{log noticia}} --}}
+{{!-- {{debugger}} --}}
+{{!-- {{log  noticia.excerpt}} --}}
+  <div class="col-lg-4 col-md-4 col-sm-4">
+  {{#link-to "noticia" noticia.slug}}
+    <div class="thumbnail">
+      <img src="{{noticia.thumbnail}}" alt="...">
+      <div class="caption">
+        <h3>{{noticia.title}}</h3>
+        {{#if noticia.excerpt}}
+          <p>{{{substr noticia.excerpt size=25}}}</p>
+        {{/if}}
+      </div>
+    </div>
+   {{/link-to}}
+  </div>
+
+{{/each}}
+</div>

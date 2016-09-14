@@ -1,0 +1,13 @@
+<form method="get" id="searchform" action="#" class="pesquisa navbar-form navbar-right navbar-procurar">
+  <div class="input-group">
+     {{!-- <input id='pesquisar' name="s" type="text" class="form-control" value="" placeholder="Digite sua busca..." tabindex="-1"> --}}
+     {{input value=value key-up=(action 'handleFilterEntry') class="form-control" placeholder="Digite a sua busca..." tabIndex="-1"}}
+    <span class="input-group-btn">
+      <button type="submit" class="btn btn-default">
+        <span class="glyphicon glyphicon-search" aria-hidden="true"></span>
+        <span class="sr-only">Procurar</span>
+      </button>
+    </span>
+  </div>
+</form>
+{{yield results}}
