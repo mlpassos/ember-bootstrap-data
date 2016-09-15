@@ -2,27 +2,27 @@ import DS from 'ember-data';
 
 export default DS.RESTAdapter.extend({
 	host: 'http://www.instadev.com.br/ember-bootstrap-api',
-	urlForFindAll(modelName, snapshot) {
+	urlForFindAll(modelName) {
 		// console.log('adapter:', modelName);
 		switch(modelName) {
 			case 'noticia':
 				return `${this.get('host')}/recent-posts.php`;
-				break;
+				// break;
 			case 'tag':
 				return `${this.get('host')}/tags.php`;
-				break;
+				// break;
 			default:
 				return this._super(...arguments);
 		}
 	},
-	urlForFindRecord(id, modelName, snapshot) {
+	urlForFindRecord(id, modelName) {
 		console.log('adapter: ', id);
 		switch(modelName) {
 			case 'noticia':
 				return `${this.get('host')}/post-slug.php?slug=${id}`;
-				break;
+				// break;
 			case 'tag':
-				return `${this.get('host')}/tag-slug.php?slug=${tagId}`;
+				return `${this.get('host')}/tag-slug.php?slug=${id}`;
 			default:
 				return this._super(...arguments);
 		}
@@ -32,7 +32,7 @@ export default DS.RESTAdapter.extend({
 		switch(modelName) {
 			case 'noticia':
 				return `${this.get('host')}/tag-slug.php?slug=${query.tagId}`;
-				break;
+				// break;
 			default:
 				return this._super(...arguments);
 		}

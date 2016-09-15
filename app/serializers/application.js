@@ -1,18 +1,21 @@
 import DS from 'ember-data';
 
 export default DS.RESTSerializer.extend({
-	modelNameFromPayloadKey: function(payloadKey) {
-		console.log('key: ', payloadKey);
-		if (payloadKey === 'noticiastags') {
-			return this._super('noticias');//.replace('blog/', ''));
-		} else {
-			return this._super(payloadKey);
-		}  
-	},
+	// modelNameFromPayloadKey: function(payloadKey) {
+	// 	console.log('key: ', payloadKey);
+	// 	if (payloadKey === 'noticiastags') {
+	// 		return this._super('noticias');//.replace('blog/', ''));
+	// 	} else {
+	// 		return this._super(payloadKey);
+	// 	}  
+	// },
 	// primaryKey: 'slug',
-	keyForAttribute(thumbnailImages) {
-	  return Ember.String.decamelize(thumbnailImages);
-	},
+	// keyForAttribute(thumbnailImages) {
+	//   return Ember.String.decamelize(thumbnailImages);
+	// },
+	// keyForAttribute(postCount) {
+	//   return Ember.String.decamelize(postCount);
+	// },
 	normalizeQueryResponse(store, primaryModelClass, payload, id, requestType) {
 		let target = primaryModelClass.modelName;
 		console.log('query: ', target);
@@ -56,6 +59,7 @@ export default DS.RESTSerializer.extend({
 					return noticia;
 				});
 				payload = {noticias: payload};
+				console.log(payload);
 				break;
 			case 'tag':
 				payload = payload.data.tags.map(tag => {
@@ -66,7 +70,7 @@ export default DS.RESTSerializer.extend({
 			default:
 				break;	
 		}
-		console.log(payload);
+		
 		return this._super(store, primaryModelClass, payload, id, requestType);
 	}
 });

@@ -1,10 +1,10 @@
 <div class="row">
 {{#each model as |noticia|}}
-
-{{!-- {{log rota}} --}}
-{{!-- {{log noticia}} --}}
-{{!-- {{debugger}} --}}
-{{!-- {{log  noticia.excerpt}} --}}
+{{!-- {{#each-in noticia.tags as |key value|}}
+ tag: {{value}}
+{{/each-in}} --}}
+{{!-- {{log noticia.categories}} --}}
+{{!-- {{log noticia.thumburl}} --}}
   <div class="col-lg-4 col-md-4 col-sm-4">
   {{#link-to "noticia" noticia.slug}}
     <div class="thumbnail">
@@ -18,6 +18,5 @@
     </div>
    {{/link-to}}
   </div>
-
 {{/each}}
 </div>

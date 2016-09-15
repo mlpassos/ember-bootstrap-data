@@ -6,5 +6,6 @@ export default DS.Model.extend({
 	slug: attr('string'),
 	title: attr('string'),
 	description: attr('string'),
+	parent: attr('number'),
 	postCount: attr('number')
 });
