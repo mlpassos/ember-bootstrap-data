@@ -10,7 +10,5 @@ export default DS.Model.extend({
 	thumbnail: attr('string'),
 	categories: DS.hasMany('category'),
 	tags: DS.hasMany('tag'),
-	thumburl: attr('string'),
-	thumbnailImages: attr()
-	// featuredimage: attr('string')
+	thumbnail_images: attr()
 });

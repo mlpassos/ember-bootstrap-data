@@ -5,7 +5,7 @@ export default DS.RESTAdapter.extend({
 	urlForFindAll(modelName) {
 		// console.log('adapter:', modelName);
 		switch(modelName) {
-			case 'post':
+			case 'noticia':
 				return `${this.get('host')}/recent-posts.php`;
 				// break;
 			case 'tag':
@@ -18,7 +18,7 @@ export default DS.RESTAdapter.extend({
 	urlForFindRecord(id, modelName) {
 		console.log('adapter: ', id);
 		switch(modelName) {
-			case 'post':
+			case 'noticia':
 				return `${this.get('host')}/post-slug.php?slug=${id}`;
 				// break;
 			case 'tag':
@@ -30,7 +30,7 @@ export default DS.RESTAdapter.extend({
 	urlForQuery(query, modelName) {
 		console.log('modelname: ', modelName);
 		switch(modelName) {
-			case 'post':
+			case 'noticia':
 				return `${this.get('host')}/tag-slug.php?slug=${query.tagId}`;
 				// break;
 			default:

@@ -6,7 +6,7 @@ export default Ember.Route.extend({
 		let tagId = params.tagid;//Ember.get(this.modelFor('tag'), 'tagid');
 		console.log('opa: ', tagId);
 		this.set('slug', tagId);
-		return this.store.query('post', {
+		return this.store.query('noticia', {
 			tagId
 		});
 	},
