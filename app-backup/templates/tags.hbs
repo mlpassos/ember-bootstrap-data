@@ -1,0 +1,13 @@
+<h2>Tags</h2>
+<ul class="list-inline tags-list">
+	{{#each model as |tag|}}
+	  {{!-- <li>
+		  {{#link-to "tag" tag.slug class="btn btn-primary" type="button"}}
+		  	{{tag.title}} <span class="badge">{{tag.post_count}}</span>
+		  {{/link-to}}
+	  </li> --}}
+	  <li>
+	  	<a href="/tag/{{tag.slug}}" style="font-size:{{tagcloud tag.post_count}}px;">{{tag.title}}</a>
+	  </li>
+	{{/each}}
+</ul>
