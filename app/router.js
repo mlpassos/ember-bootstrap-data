@@ -15,7 +15,9 @@ Router.map(function() {
   });
   this.route('links');
   this.route('downloads');
-  this.route('contato');
+  this.route('contato', {}, function() {
+    //
+  });
   this.route('sobre');
 
   this.route('tags', {});

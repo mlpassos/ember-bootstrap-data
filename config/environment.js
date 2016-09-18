@@ -19,6 +19,32 @@ module.exports = function(environment) {
     }
   };
 
+  // ENV['g-map'] = {
+  //   exclude: true,
+  //   // libraries: ['places'],
+  //   key: 'AIzaSyAuTPAIhJmjiN7koIxMKQ3125yKwDzhCoo'
+  //   // AIzaSyAcqXF6nzd3bfoM7LvN9Y4NloaHI-leLq0
+  //   // AIzaSyAuTPAIhJmjiN7koIxMKQ3125yKwDzhCoo
+  //   // http://localhost/landing-remo/
+  //   // client: ' 63010766503-84o468ebru1gc3na0e2hrivig5j9lglc.apps.googleusercontent.com',
+  //   // version: '3.26',
+  //   // language: 'en',
+  //   // protocol: 'http'
+  // };
+
+  ENV.contentSecurityPolicy = {
+    'default-src': "'none'",
+    'script-src': "'self' 'unsafe-eval' *.googleapis.com maps.gstatic.com",
+    'font-src': "'self' fonts.gstatic.com",
+    'connect-src': "'self' maps.gstatic.com",
+    'img-src': "'self' *.googleapis.com maps.gstatic.com csi.gstatic.com",
+    'style-src': "'self' 'unsafe-inline' fonts.googleapis.com maps.gstatic.com"
+  };
+
+  ENV.googleMap = {
+    apiKey: 'AIzaSyAcqXF6nzd3bfoM7LvN9Y4NloaHI-leLq0'
+  };
+
   ENV.cordova = {
   // Rebuild the cordova project on file changes. Blocks the server until it's
   // finished.

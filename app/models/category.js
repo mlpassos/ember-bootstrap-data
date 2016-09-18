@@ -7,5 +7,5 @@ export default DS.Model.extend({
 	title: attr('string'),
 	description: attr('string'),
 	parent: attr('number'),
-	postCount: attr('number')
+	post_count: attr('number')
 });
