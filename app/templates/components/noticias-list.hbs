@@ -1,40 +1,32 @@
-{{!-- <div class="container"> --}}
-  <div class="row">
-  {{#masonry-grid items=model as |noticia|}}
+<div class="row">
+{{!-- {{#masonry-grid items=model layoutMode=fitRows customLayout=true as |noticia index grid|}} --}}
+{{#masonry-grid items=model as |noticia|}}
 
-
-  {{!-- {{#each model as |noticia|}} --}}
-
-  {{!-- {{log noticia.categories}} --}}
-  {{!-- {{log noticia.thumburl}} --}}
-    <div class="col-lg-4 col-md-6 col-sm-6">
-    {{!-- {{#link-to "noticia" noticia.slug}} --}}
-      <div class="thumbnail">
-        {{#link-to "noticia" noticia.slug}}
-          <img src="{{noticia.thumbnail}}" alt="...">
-        {{/link-to}}
-        {{!-- {{#link-to "noticia" noticia.slug}} --}}
-          <div class="caption">
-            <h3 class="text-left">{{noticia.title}}</h3>
-            {{#link-to "noticia" noticia.slug}}
-              {{#if noticia.excerpt}}
-                <small class="text-left">{{{substr noticia.excerpt size=25}}}</small>
-              {{/if}}
-            {{/link-to}}
-          </div>
-        
-        {{#each noticia.tags as |value|}}
-          <span>{{link-to value.title "tag" value.slug}}</span>
-        {{/each}}
-      </div>
-        
-        {{!-- notícias --}}
-
-        {{!-- {{#each noticia.categories as |value|}}
-          {{link-to value.title "tag" value.slug}}
-        {{/each}} --}}
+{{!-- {{#each model as |noticia|}} --}}
+  {{!-- <div class="col-lg-4 col-md-6 col-sm-6"> --}}
+  
+  {{!-- {{#masonry-item item=noticia grid=grid }} --}}
+    <div class="thumbnail">
+      {{#link-to "noticia" noticia.slug}}
+        <img src="{{noticia.thumbnail}}" alt="...">
+      {{/link-to}}
+        <div class="caption">
+          <h3 class="text-left">{{noticia.title}}</h3>
+          {{#link-to "noticia" noticia.slug}}
+            {{#if noticia.excerpt}}
+              <small class="text-left">{{{substr noticia.excerpt size=25}}}</small>
+            {{/if}}
+          {{/link-to}}
+        </div>       
+      {{#each noticia.tags as |value|}}
+        <span>{{link-to value.title "tag" value.slug}}</span>
+      {{/each}}
     </div>
-  {{!-- {{/each}} --}}
-  {{/masonry-grid}}
-  </div>
-{{!-- </div> --}}
+  {{!-- {{/masonry-item}} --}}
+  
+  {{!-- </div> --}}
+  
+
+{{!-- {{/each}} --}}
+{{/masonry-grid}}
+</div>
