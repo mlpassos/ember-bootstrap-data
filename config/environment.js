@@ -42,7 +42,8 @@ module.exports = function(environment) {
   };
 
   ENV.googleMap = {
-    apiKey: 'AIzaSyAcqXF6nzd3bfoM7LvN9Y4NloaHI-leLq0'
+    apiKey: 'AIzaSyAcqXF6nzd3bfoM7LvN9Y4NloaHI-leLq0'//,
+    // libraries: ['places','drawing', 'visualization']
   };
 
   ENV.cordova = {
