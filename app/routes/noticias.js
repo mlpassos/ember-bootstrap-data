@@ -7,8 +7,10 @@ export default Ember.Route.extend({
 	// 		console.log("tem post entao limpa");
 	// 		this.store.unloadAll('post');
 	// 	}
-		console.log("unload");
-		this.store.unloadAll('post');
+		// console.log("unload");
+		// this.store.unloadAll('post');
+		let rt = this.get('routing.currentRouteName');
+		console.log('rota', rt);
 	},
 	model() {
 		return this.store.findAll('post');
