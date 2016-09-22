@@ -2,15 +2,9 @@ import DS from 'ember-data';
 
 export default DS.RESTAdapter.extend({
 	host: 'http://www.instadev.com.br/ember-bootstrap-api',
-	// shouldReloadAll: function(store, snapshotRecordArray) {
-	//   // var snapshots = snapshotArray.snapshots();
-	//   console.log('store: ', snapshotRecordArray.length);
-	//   if (snapshotRecordArray.length > 0) {
-	//   	console.log('aqui maior que zero');
-	//   	return true;
-	//   } else {
-	//   	return false;
-	//   }
+	// shouldReloadAll(store, snapshot) {
+	// 	// console.log('nao carrega tudo');
+	//     return true;
 	// },
 	urlForFindAll(modelName) {
 		console.log('post.findAll');

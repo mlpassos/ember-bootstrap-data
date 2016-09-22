@@ -7,8 +7,14 @@ export default DS.RESTSerializer.extend(DS.EmbeddedRecordsMixin, {
 	},
 	modelNameFromPayloadKey: function(payloadKey) {
 		console.log('noticia.key: ', payloadKey);
+		// if (payloadKey == 'tagposts') {
+		// 	return this._super('post');
+		// } else {
+		// 	return this._super(payloadKey);
+		// }
 		return this._super(payloadKey);
 	},
+	// primaryKey: 'slug',
 	normalizeResponse(store, primaryModelClass, payload, id, requestType) {
 		let target = primaryModelClass.modelName;
 		switch(requestType) {
