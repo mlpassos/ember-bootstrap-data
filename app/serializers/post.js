@@ -21,6 +21,12 @@ export default DS.RESTSerializer.extend(DS.EmbeddedRecordsMixin, {
 			case 'query':
 				console.log('noticia.query: ', target);
 				payload = payload.posts;
+				// payload = payload.map(rawItem => {
+				// 	rawItem.oldId = rawItem.id;
+				// 	rawItem.id = rawItem.slug;
+				// 	return rawItem;
+				// });
+				console.log('load: ', payload);
 				// .map(noticia => {
 				// 	return noticia;
 				// });
