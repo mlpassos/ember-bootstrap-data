@@ -24,7 +24,7 @@ export default Ember.Route.extend({
 			// 		this.store.unloadRecord(post);
 			// 	}
 			// });
-			this.store.unloadAll('post');
+			// this.store.unloadAll('post');
 		}	
 	}
 });

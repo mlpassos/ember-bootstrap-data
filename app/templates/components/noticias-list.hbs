@@ -1,4 +1,7 @@
-{{#masonry-grid items=model as |noticia|}}
+{{yield}}
+<div class="row isogrid">
+{{#each model as |noticia|}}
+  <div class="col-lg-4 col-md-4 col-sm-6 col-xs-12 isoitem">
     <div class="thumbnail">
       {{#link-to "noticia" noticia}}
         <img src="{{noticia.thumbnail}}" alt="...">
@@ -7,12 +10,14 @@
           <h3 class="text-left">{{noticia.title}}</h3>
           {{#link-to "noticia" noticia}}
             {{#if noticia.excerpt}}
-              <small class="text-left">{{{substr noticia.excerpt size=25}}}</small>
+              <small class="text-left">{{{substr noticia.excerpt size=12}}}</small>
             {{/if}}
           {{/link-to}}
-        </div>  
+        </div>       
       {{#each noticia.tags as |value|}}
-        {{link-to value.title "tag" value.slug}}
+        <span>{{link-to value.title "tag" value.slug}}</span>
       {{/each}}
     </div>
-{{/masonry-grid}}
+  </div>
+{{/each}}
+</div>

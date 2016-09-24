@@ -1,16 +1,12 @@
 import DS from 'ember-data';
 
 export default DS.RESTAdapter.extend({
-	host: 'http://www.instadev.com.br/ember-bootstrap-api',
+	host: 'http://www.secom.pa.gov.br/site/api',
 	urlForFindAll(modelName) {
-		// console.log('adapter:', modelName);
 		switch(modelName) {
-			// case 'post':
-			// 	return `${this.get('host')}/recent-posts.php`;
-			// 	// break;
 			case 'tag':
-				return `${this.get('host')}/tags.php`;
-				// break;
+				return `${this.get('host')}/get_tag_index/`;
+				break;
 			default:
 				return this._super(...arguments);
 		}
@@ -18,21 +14,9 @@ export default DS.RESTAdapter.extend({
 	urlForFindRecord(id, modelName) {
 		console.log('adapter: ', id);
 		switch(modelName) {
-			// case 'post':
-			// 	return `${this.get('host')}/post-slug.php?slug=${id}`;
-			// 	// break;
 			case 'tag':
-				return `${this.get('host')}/tag-slug.php?slug=${id}`;
-			default:
-				return this._super(...arguments);
-		}
-	},
-	urlForQuery(query, modelName) {
-		console.log('modelname: ', modelName);
-		switch(modelName) {
-			// case 'post':
-			// 	return `${this.get('host')}/tag-slug.php?slug=${query.tagId}`;
-			// 	// break;
+				return `${this.get('host')}/get_tag_posts/?slug=${id}`;
+				break;
 			default:
 				return this._super(...arguments);
 		}

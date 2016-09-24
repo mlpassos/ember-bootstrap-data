@@ -1,8 +1,14 @@
 import Ember from 'ember';
 
 export default Ember.Component.extend({
-	// didDestroyElement() {
-	// 	this._super(...arguments);
-	// 	this.store.unloadAll('post');
-	// }
+	didInsertElement() {
+	  // debugger;
+      let $grid = this.$('.isogrid').isotope({
+        // options
+        itemSelector: '.isoitem',
+        layoutMode: 'fitRows'
+      });
+      $grid.imagesLoaded().progress( function() {
+    });  
+    }
 });
