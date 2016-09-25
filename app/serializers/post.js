@@ -20,6 +20,12 @@ export default DS.RESTSerializer.extend(DS.EmbeddedRecordsMixin, {
 		switch(requestType) {
 			case 'query':
 				console.log('noticia.query: ', target);
+				let meta = {
+					'count_total': payload.count_total,
+					'count': payload.count,
+					// 'page': payload.page,
+					'pages': payload.pages
+				};
 				payload = payload.posts;
 				// payload = payload.map(rawItem => {
 				// 	rawItem.oldId = rawItem.id;
@@ -30,15 +36,22 @@ export default DS.RESTSerializer.extend(DS.EmbeddedRecordsMixin, {
 				// .map(noticia => {
 				// 	return noticia;
 				// });
-				payload = {post: payload};
+				payload = {post: payload, meta: meta};
 				break;
 			case 'findAll':
 				console.log('noticia.findAll: ', target);
+				// let meta = {
+				// 	'total': payload.count_total,
+				// 	'count': payload.count,
+				// 	'pages': payload.pages
+				// };
 				payload = payload.posts;
 				// .map(post => {
 				// 	return post;
 				// });
+				// payload = {post: payload, meta: meta};
 				payload = {post: payload};
+				// console.log(payload);
 				break;
 			case 'findRecord':
 				console.log('noticia.findRecord: ', target);

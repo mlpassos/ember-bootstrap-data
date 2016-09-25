@@ -21,3 +21,10 @@
   </div>
 {{/each}}
 </div>
+{{#if page}}
+<div class="row">
+  <div class="col-lg-12">
+    {{noticias-pages current=page total=model.meta.pages}}    
+  </div>
+</div>
+{{/if}}

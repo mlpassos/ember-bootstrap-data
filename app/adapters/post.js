@@ -13,16 +13,10 @@ export default DS.RESTAdapter.extend({
 	urlForQuery(query, modelName) {
 		console.log('post.query');
 		console.log(query);
-		for (var key in query) {
-		  // via noticias
-		  if (key == "count") {
-		  	console.log(key);
-		  	return `${this.get('host')}/get_recent_posts/?count=-1`;
-		  	break;
-		  }
+		if (query.tagId) {
+			return `${this.get('host')}/get_tag_posts/?slug=${query.tagId}&count=-1`;	
+		} else {
+			return `${this.get('host')}/get_recent_posts/`;			
 		}
-		// via tag
-		console.log(key);
-		return `${this.get('host')}/get_tag_posts/?slug=${query.tagId}&count=-1`;
 	}
 });
