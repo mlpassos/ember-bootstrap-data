@@ -14,7 +14,11 @@ export default DS.RESTAdapter.extend({
 		console.log('post.query');
 		console.log(query);
 		if (query.tagId) {
-			return `${this.get('host')}/get_tag_posts/?slug=${query.tagId}&count=-1`;	
+			query.slug = query.tagId;
+			delete query.tagId;
+			// console.log(query);
+			return `${this.get('host')}/get_tag_posts/`;
+			// return `${this.get('host')}/get_tag_posts/?slug=${query.tagId}&count=-1`;
 		} else {
 			return `${this.get('host')}/get_recent_posts/`;			
 		}
