@@ -16,16 +16,17 @@
           {{/link-to}}
         </div>       
       {{#each noticia.tags as |value|}}
-        <span>{{link-to value.title "tag" value.slug}}</span>
+        <span>{{link-to value.title "tag" value.slug 1}}</span>
       {{/each}}
     </div>
   </div>
 {{/each}}
 </div>
+{{!-- {{check-pagination }} --}}
 {{#if page}}
 <div class="row">
   <div class="col-lg-12">
-    {{noticias-pages current=page total=model.meta.pages}}    
+    {{noticias-pages origem=origem current=page total=model.meta.pages}}    
   </div>
 </div>
 {{/if}}

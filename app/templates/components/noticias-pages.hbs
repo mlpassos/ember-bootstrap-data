@@ -1,15 +1,20 @@
 {{yield}}
 <nav aria-label="Page navigation">
   <ul class="pagination">
-    <li>
-      <a href="/noticias/" aria-label="Previous">
+    {{log prev next}}
+    {{#link-to origem prev tagName="li"}}
+      <a href="" aria-label="Previous">
         <span aria-hidden="true">&laquo;</span>
       </a>
-    </li>
-    <li>
-      <a href="/noticias/" aria-label="Next">
+    {{/link-to}}
+    {{#each res as |item|}}
+      {{!-- <li>{{link-to item "noticias" item}}</li> --}}
+      {{#link-to origem item tagName="li"}}<a href="">{{item}}</a>{{/link-to}}
+    {{/each}}
+    {{#link-to origem next tagName="li"}}
+      <a href="" aria-label="Next">
         <span aria-hidden="true">&raquo;</span>
       </a>
-    </li>
+    {{/link-to}}
   </ul>
 </nav>

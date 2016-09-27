@@ -13,9 +13,10 @@ export default DS.RESTAdapter.extend({
 	urlForQuery(query, modelName) {
 		console.log('post.query');
 		console.log(query);
-		if (query.tagId) {
-			query.slug = query.tagId;
-			delete query.tagId;
+		if (query.tagpost) {
+			delete query.tagpost;
+			// query.slug = query.tagId;
+			// delete query.tagId;
 			// console.log(query);
 			return `${this.get('host')}/get_tag_posts/`;
 			// return `${this.get('host')}/get_tag_posts/?slug=${query.tagId}&count=-1`;

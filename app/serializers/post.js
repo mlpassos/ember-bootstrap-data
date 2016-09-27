@@ -20,11 +20,13 @@ export default DS.RESTSerializer.extend(DS.EmbeddedRecordsMixin, {
 		switch(requestType) {
 			case 'query':
 				console.log('noticia.query: ', target);
+				let count = parseInt(payload.count);
+				let pages = parseInt(payload.pages);
 				let meta = {
-					'count_total': payload.count_total,
-					'count': payload.count,
+					'count_total': (typeof payload.count_total == 'undefined') ? count*pages : payload.count_total,
+					'count': count,
 					// 'page': payload.page,
-					'pages': payload.pages
+					'pages': pages
 				};
 				payload = payload.posts;
 				// payload = payload.map(rawItem => {
@@ -32,7 +34,7 @@ export default DS.RESTSerializer.extend(DS.EmbeddedRecordsMixin, {
 				// 	rawItem.id = rawItem.slug;
 				// 	return rawItem;
 				// });
-				console.log('load: ', payload);
+				console.log('load: ', meta);
 				// .map(noticia => {
 				// 	return noticia;
 				// });

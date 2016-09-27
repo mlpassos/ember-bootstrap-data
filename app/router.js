@@ -8,33 +8,19 @@ const Router = Ember.Router.extend({
 
 Router.map(function() {
   this.route('noticias', {path: 'noticias/:page'}, function() {
-
+    
   });
   this.route('noticia', {path: 'noticia/:slug'}, function() {
 
   });
   this.route('links');
   this.route('downloads');
-  this.route('contato', {}, function() {
-    //
-  });
+  this.route('contato');
   this.route('sobre');
 
   this.route('tags', {});
-  this.route('tag', {path: 'tag/:tagid'}, function() {
-    // this.route('noticias', {});
+  this.route('tag', {path: 'tag/:slug/:pageid'}, function() {
   });
 });
 
 export default Router;
-
-// this.route('tag', {path: 'tag/:slug'}, function() {
-//   // org/emberjs
-//   this.route('repos', {});
-//   this.route('repo', {path: ':repoid'}, function() {
-//     this.route('contributors', {});
-//     this.route('issues', {});
-//   });
-//   // org/jquery/jquery-ui
-//   this.route('notfound', {});
-// });
